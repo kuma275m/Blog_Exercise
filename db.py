@@ -1,10 +1,9 @@
 import sqlalchemy as sqla
 import sqlalchemy.orm as sqlorm
 from sqlalchemy.ext.declarative import declarative_base as sqla_declarative_base
-from flask.ext.sqlalchemy import BaseQuery
 
 Base = sqla_declarative_base()
-engine = sqla.create_engine('postgresql://admin:123456@localhost:5432/blog', echo=True)
+engine = sqla.create_engine('postgresql://vypsacoerijvxq:8ZcsasplA5yi7CsA-4PwDe0hBs@ec2-54-225-89-169.compute-1.amazonaws.com:5432/datc4qcfbqcni', echo=True)
 
     
 class Blog(Base):

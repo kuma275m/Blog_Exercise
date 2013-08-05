@@ -5,7 +5,7 @@ import db
 
 app = Flask(__name__)
 CSRF_ENABLED = True
-app.secret_key = 'you-will-never-guess'
+app.secret_key = '8ZcsasplA5yi7CsA-4PwDe0hBs'
 
 class User():
     username = 'admin'
