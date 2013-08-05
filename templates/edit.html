@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block content %}
+{% for post in post %}
+              <form class="navbar-form" action="" method=post>
+		<dl>
+                <dt>Title:
+                <dd><input type=text name=title value="{{
+          post.title }}">
+		<dt>Tags: Please divding tags by ", " (Comma plus Space)
+                <dd><input type=text name=tags value="{{
+          post.tags }}">
+                <dt>Content:
+                <dd><textarea type=text name=content style="width:700px;height:300px;resize:none">{{
+          post.content }}</textarea>
+                </dl>
+                <p><input type=submit class="btn" value=Submit>
+		<a href="/"><input type=submit class="btn" value=Cancel></a>
+		</p>
+              </form>
+{% endfor %}
+{% endblock %}

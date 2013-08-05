@@ -1,0 +1,18 @@
+{% extends "template.html" %}
+{% block content %}
+
+              <form class="navbar-form" action="" method=post>
+		<dl>
+                <dt>Title:
+                <dd><input type=text name=title value="{{
+          request.form.title }}">
+                <dt>Tags: Please divding tags by ", " (Comma plus Space)
+                <dd><input type=text name=tags value="">
+                <dt>Content:
+                <dd><textarea type=text name=content style="width:700px;height:300px;resize:none"></textarea>
+                </dl>
+                <p><input type=submit class="btn" value=Submit>
+		<a href="/"><input type=submit class="btn" value=Cancel></a>
+		</p>
+              </form>
+{% endblock %}

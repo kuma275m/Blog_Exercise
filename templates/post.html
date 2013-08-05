@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+{% block content %}
+{% for post in post %}
+	<h4>{{ post.title }}</h4>
+	<p>{{ post.content|safe }}</p>
+	{% if session.is_authenticated %} 
+      		<a class="btn pull-right" href="/edit/{{ post.id }}">Edit</a>
+      		<a class="btn pull-right" href="/delete/{{ post.id }}">Delete</a>
+	{% endif %}
+{% endfor %}
+{% endblock %}

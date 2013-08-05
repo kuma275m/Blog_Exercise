@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blog Exercise</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+<!--Header Start-->
+<header>
+<div class="navbar navbar-inverse">
+<div class="navbar-inner">
+<div class="container">
+<a class="brand" href="/">Welcome to Blog Exercise</a>
+{% if session.is_authenticated %} 
+<a class="navbar-text pull-right" href="/logout">Logout</a>
+{% else %}
+<a class="navbar-text pull-right" href="/login">Admin Login</a>
+{% endif %}
+</div>
+</div>
+</div>
+</header>
+<!--Header End-->
+<!--Left Part Start-->
+<div class="span4 pull-left">
+<div class="well sidebar-nav">
+<ul class="nav nav-list">
+<li class="nav-header">Search bar</li>
+<form class="navbar-form" action="/search" method=post>
+<input class="span2" type="text" name=key>
+<button type="submit" class="btn"> Hae </button>
+</form>
+</ul>
+<div style="clear:both;height:10px"></div>
+{% if session.is_authenticated %} 
+<ul class="nav nav-list">
+<li class="nav-header">Admin Function</li>
+<li><a href="/add">Add New Post</a></li>
+</ul>
+{% endif %}
+</div>
+</div>
+<!--Left Part End-->
+<!--Main Part Start-->
+<div class="pull-left span11" style="margin-left:3%">
+{% block content %}
+{% endblock %}
+</div>
+<div style="clear:both;height:100px"></div>
+<!--Main Part End-->
+<!--Footer Start-->
+<div class="modal-footer">
+<p class="muted credit">Powered by Ziduan Xu</p>
+</div>
+<!--Footer End-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+</body>
+</html>

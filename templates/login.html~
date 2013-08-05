@@ -1,0 +1,21 @@
+{% extends "template.html" %}
+{% block content %}
+
+              <form class="navbar-form" action="" method=post>
+            {{ form.hidden_tag() if form.hidden_tag }}
+            {% for f in form if f.type != 'CSRFTokenField' %}
+            <div>
+            {{ f.label }}
+            {{ f }}
+            {% if f.errors %}
+            <ul>
+                {% for e in f.errors %}
+                <li>{{ e }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            </div>
+            {% endfor %}
+            <input type="submit" />
+              </form>
+{% endblock %}
